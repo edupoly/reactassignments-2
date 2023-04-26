@@ -11,13 +11,13 @@
             var Abc = function(){
                 var x = +prompt();
                 var y = +prompt();
-               // var z = +prompt();
+                var z = +prompt();
                 var[a,setA] = React.useState(x);
                 var[b,setB] = React.useState(y);
-               // var[c,setC] = React.useState(z);
+                var[c,setC] = React.useState(z);
                 return(
                     <div>
-                     <h1>{a>b?a:b}</h1>    
+                     <h1>{a>b?(a>c?a:c):(b>c?b:c)}</h1>   
                      </div>
                 )
             }
