@@ -50,14 +50,17 @@
                   {
                     students.map((a)=>{
                       return (
-                        <div style={{width:"250px",border:'1px solid',padding:'10px',margin:'10px'}}>
-                          <div style={a.gender==='male'?{backgroundColor:'lightblue'}:{backgroundColor:'pink'}}>
-                            <h1>First Name:{a.firstname}</h1>
-                            <h1>Last Name:{a.lastname}</h1>
-                            <h1>Age:{a.age}</h1>
-                            <h1>Gender:{a.gender}</h1>
+                        <div style={{width:'400px',display:'flex',border:'1px solid',alignContent:'start'}}>
+                          <div style={{width:"150px",padding:'10px',margin:'10px'}}>
+                            <div style={a.gender==='male'?{backgroundColor:'lightblue'}:{backgroundColor:'pink'}}>
+                              <h5>First Name:{a.firstname}</h5>
+                              <h5>Last Name:{a.lastname}</h5>
+                              <h5>Age:{a.age}</h5>
+                              <h5>Gender:{a.gender}</h5>
+                            </div>
                           </div>
-                      </div>
+                          <div style={{width:'150px'}}><img width="100%" src={a.gender==='male'?maleimage:femaleimage} alt="" /></div>
+                        </div>
                       )
                     })
                   }
