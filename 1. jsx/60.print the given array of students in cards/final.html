@@ -5,49 +5,38 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
-    
-   
-    <div id="d3"></div>
+    <div id="d3" ></div>
 
     <script type="text/babel">
-      /*
-        
-      */
-      var students = [
+      const students = [
         {
-          firstname:"Praveen",
-          lastname:"Gubbala",
-          age:40
+          firstname: "Praveen",
+          lastname: "Gubbala",
+          age: 40
         },
         {
-          firstname:"Rohit",
-          lastname:"Sharma",
-          age:35
+          firstname: "Rohit",
+          lastname: "Sharma",
+          age: 35
         },
         {
-          firstname:"Sachin",
-          lastname:"Tendulkar",
-          age:50
+          firstname: "Sachin",
+          lastname: "Tendulkar",
+          age: 50
         },
-    ]
-      var jh1 = <div>
-                  <table border='2'>
-                  {
-                    students.map((s)=>{
-                      return (
-                        <tr>
-                          <td>{s.firstname}</td>
-                          <td>{s.lastname}</td>
-                          <td>{s.age}</td>
-                        </tr>
-                      )
-                    })
-                  }
-                  </table>
-                </div>
-      ReactDOM.render(jh1,document.getElementById("d3"))
-
-
+      ];
+      
+      const StudentCard = ({ firstname, lastname, age }) => (
+        <div style={{ border: "2px solid black", padding: "10px", margin: "10px" }}>
+          <h2>{firstname} {lastname}</h2>
+          <p>Age: {age}</p>
+        </div>
+      );
+      
+      const cards = students.map(s => <StudentCard {...s} />);
+      
+      ReactDOM.render(<div>{cards}</div>, document.getElementById("d3"));
     </script>
+    
   </body>
 </html>
