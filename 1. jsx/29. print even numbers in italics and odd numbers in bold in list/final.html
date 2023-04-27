@@ -14,7 +14,7 @@
       var ar = [11,29,30,22,15,24,19,28]
       var jh1 = <div>
                   {
-                    ar.map((a)=>{return (a>25?<li>{a}</li>:null)})
+                    ar.map((a)=>{return (a%2===0?<li><i>{a}</i></li>:<li><b>{a}</b></li>)})
                   }
                 </div>
       ReactDOM.render(jh1,document.getElementById("d3"))
