@@ -14,7 +14,7 @@
         document.getElementById('dd').innerHTML=e.target.value.toUpperCase();
       }
       var jh1 = <div>
-                  <input type="text" id='t1' onBlur={abc}/>
+                  <input type="text" id='t1' onKeyUp={abc}/>
                   <h1 id='dd'></h1>
                 </div>
       ReactDOM.render(jh1,document.getElementById("d3"))
