@@ -7,10 +7,11 @@
 </head>
 
 <body>
-    <div id="d1"></div>
+    <div id="d3"></div>
+
     <script type="text/babel">
-        var Abc = function () {
-            var [students, setStudents] = React.useState([
+        function App() {
+            const [students, setStudents] = React.useState([
                 {
                     firstname: "Praveen",
                     lastname: "Gubbala",
@@ -41,27 +42,27 @@
                     age: 50,
                     gender: 'male'
                 },
-            ])
+        ]);
+
             return (
-                <div style={{ display: "flex", flexWrap: 'wrap' }}>
-                    {
-                        students.map((a) => {
+                <table border='2'>
+                    <tbody>
+                        {students.map((a) => {
                             return (
-                                <div style={{ width: "250px", border: '1px solid', padding: '10px', margin: '10px' }}>
-                                    <div style={a.gender === 'male' ? { backgroundColor: 'lightblue' } : { backgroundColor: 'pink' }}>
-                                        <h1>First Name:{a.firstname}</h1>
-                                        <h1>Last Name:{a.lastname}</h1>
-                                        <h1>Age:{a.age}</h1>
-                                        <h1>Gender:{a.gender}</h1>
-                                    </div>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-            )
+                                <tr key={a.firstname}>
+                                    <td>{a.firstname}</td>
+                                    <td>{a.lastname}</td>
+                                    <td>{a.age}</td>
+                                    <td>{a.gender}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            );
         }
-        ReactDOM.render(<Abc />, document.getElementById('d1'));
+
+        ReactDOM.render(<App />, document.getElementById("d3"));
     </script>
 </body>
 
