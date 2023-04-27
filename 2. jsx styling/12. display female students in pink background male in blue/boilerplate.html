@@ -10,6 +10,7 @@
     <div id="d3"></div>
 
     <script type="text/babel">
+      
       var students = [
         {
           firstname:"Praveen",
@@ -43,18 +44,20 @@
         },
     ]
 
-      var jh1 = <div style={{display:"flex",flexWrap:'wrap'}}>
+      var jh1 = <table border='2'>
                   {
                     students.map((a)=>{
-                      return <div style={{width:"250px",border:'1px solid',padding:'10px',margin:'10px'}}>
-                        <h1>First Name:{a.firstname}</h1>
-                        <h1>Last Name:{a.lastname}</h1>
-                        <h1>Age:{a.age}</h1>
-                        <h1>Gender:{a.gender}</h1>
-                      </div>
+                      return (
+                        <tr style={a.gender==='female'?{backgroundColor:'lightpink'}:{backgroundColor:'blue'}}>
+                          <td>{a.firstname}</td>
+                          <td>{a.lastname}</td>
+                          <td>{a.age}</td>
+                          <td>{a.gender}</td>
+                        </tr>
+                      )
                     })
                   }
-                </div>
+                </table>
 
       ReactDOM.render(jh1,document.getElementById("d3"))
 
